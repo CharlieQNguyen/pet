@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <a [routerLink]="['/new']"><h4>Add a pet to the shelter</h4></a>
+  <h4>These pets are looking for a home!</h4>            
+  <table class="table table-dark table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pet of pets">
+        <td>{{pet.name}}</td>        
+        <td>{{pet.type}}</td>
+        <td>
+          <button [routerLink]="['/display',pet._id]">Details</button>
+          <button [routerLink]="['/edit',pet._id]">Edit</button>
+        </td>        
+      </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class= "container">
+    <h4> Edit this pet</h4>
+    <form (submit)="editPet(pet._id)">
+      <div class="form-group">
+        <label for="Pet Name">Pet Name:</label>
+        <input type="text" class="form-control" placeholder="Enter Name" name="pet.name" [(ngModel)]="pet.name"><br>
+      </div>
+      <div class="form-group">
+        <label for="Pet Type">Pet Type:</label>
+        <input type="text" class="form-control" placeholder="Enter Type" name="pet.type" [(ngModel)]="pet.type"><br>
+      </div>
+      <div class="form-group">
+        <label for="Description">Pet Description:</label>
+        <input type="text" class="form-control" placeholder="Enter Description" name="pet.description" [(ngModel)]="pet.description"><br>
+      </div>
+    <h3>Skills:</h3>
+      <div class="form-group">
+        <label for="Skill 1">Skill 1:</label>
+        <input type="text" class="form-control" placeholder="Enter skill 1" name="pet.skill1" [(ngModel)]="pet.skill1"><br>
+      </div>
+      <div class="form-group">
+        <label for="Skill 2">Skill 2:</label>
+        <input type="text" class="form-control" placeholder="Enter skill 2" name="pet.skill2" [(ngModel)]="pet.skill2"><br>
+      </div>
+      <div class="form-group">
+        <label for="Skill 3">Skill 3:</label>
+        <input type="text" class="form-control" placeholder="Enter skill 3" name="pet.skill3" [(ngModel)]="pet.skill3"><br>
+      </div>
+
+    <input type="submit" value="Edit Pet">
+    <button [routerLink]="['home']">Cancle</button>
+  </form>
+    <div *ngIf="errors.length > 0">
+      <p *ngFor="let error of errors">{{error}}</p>
+  </div>
+</div>
+</body>
+</html>
